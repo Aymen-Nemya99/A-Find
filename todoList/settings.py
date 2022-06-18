@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ltn63h8!3ied%@*2o+4xbp3=&9*4^mp5_%d8p!*t7_1opj@w8('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [ 'sleepy-everglades-07474.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = [ 'afind.herokuapp.com','sleepy-everglades-07474.herokuapp.com','127.0.0.1']
 
 # Application definition
 
