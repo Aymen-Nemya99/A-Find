@@ -1,0 +1,79 @@
+{%  load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>PFE</title>
+    <link rel="stylesheet" href="{% static 'css\bootstrap\css\bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="/">A-Find</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"><a class="nav-link" href="/#about">About</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link active nav-link-active" href="/#Test">Test</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="/#contact">contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url({% static 'img\img\intro-bg.jpg' %});">
+        <div class="intro-body">
+            <h1 class="brand-heading">A-Find</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <p class="intro-text">quelque catégorie mais des dizaine d'influenceurs!<br>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 mx-auto">
+                <p class="intro-text"></p>
+                <button  class="btn btn-primary btn-lg btn-default" onclick="location.href='/addpatien'" type="submit">Social</button>
+                <button class="btn btn-primary btn-lg btn-default" onclick="location.href='/addpatien3'" type="submit">News</button>
+                <button class="btn btn-primary btn-lg btn-default" onclick="location.href='/addpatien4'" type="submit">Sport</button>
+                <button class="btn btn-primary btn-lg btn-default" onclick="location.href='/addpatien5'" type="submit">Politique</button>
+                <button class="btn btn-primary btn-lg btn-default"  onclick="location.href='/addpatien6'" type="submit">Santé</button>
+                <button class="btn btn-primary btn-lg btn-default" onclick="location.href='/addpatien7'" type="submit">Religion</button>
+                <button class="btn btn-primary btn-lg btn-default" onclick="location.href='/addpatien8'" type="submit">ART</button>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Tweet</th>
+                                    <th>Nombre de Retweet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for pat in pat %}
+                                {% if pat.Cluster == cal %}
+                                <tr>
+                                    <td style="color:white">{{pat.Username}}</td>
+                                    <td style="color:white">{{pat.Tweet}}</td>
+                                    <td style="color:white">{{pat.Retweet}}</td>
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="{% static 'css\bootstrap\js\bootstrap.min.js' %}"></script>
+    <script src="{% static  'js\js\script.min.js'%}"></script>
+</body>
+
+</html>
